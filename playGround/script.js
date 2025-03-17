@@ -5,10 +5,10 @@ const ul = document.querySelector(".items");
 const li = document.createElement('li');
 ul.appendChild(li);
 li.className = "item";
-li.textContent = "Item 4";
+li.textContent = "Item 6";
 
 // Append new HTML content to the existing content using innerHTML
-// parentElement.innerHTML += '<div>New content added using innerHTML</div>';
+ul.innerHTML += '<div style="background-color: blueviolet;" >New content added using innerHTML</div>';
 
 // parentNode
 
@@ -43,3 +43,7 @@ ul.nextElementSibling.style.color = "red";
 console.log(ul.className);
 ul.className = "hello";
 console.log(ul.className);
+
+console.log(Math.ceil(Math.random() * 6))
+
+ul.replaceChild(ul.children[1], ul.children[2])

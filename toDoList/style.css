@@ -21,16 +21,42 @@ body{
     position: relative;
     display: flex;
     gap: 50px;
+    align-items: center; 
+}
+
+
+.add{
+    display: flex;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+
+}
+.add input[type="checkbox"] {
+    min-width: 16px;
+    min-height: 16px;
+  }
+
+#add{
+    background-color: rgb(255, 190, 120);
+    border: 2px black solid;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    font-size:30px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
+  
 
 .notebook{
     padding-top: 20px;
     background-size: cover;
-    min-height: 600px;
+    min-height: 760px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     width: 550px;
     background: bisque;
     border: 3px black solid;
@@ -68,8 +94,9 @@ li{
 }
 .li{
     display: flex;
+    align-items: center;
 }
-#ul input[type=text]{
+.ul input[type=text]{
     background-color: rgba(0, 72, 255, 0);
     width: 100%;
     white-space: nowrap;
@@ -77,13 +104,20 @@ li{
     overflow: scroll;
     outline: none;
     border: none;
+
 }
 
-#ul img{
+.ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+}
+
+.ul img{
     width: 15px;
 }
 
-button{
+.li button{
     padding-left: 2px;
     background: none;
     border: none;
@@ -97,11 +131,10 @@ button{
 
 .check{
     display: flex;
+    align-items: center;
     gap: 5px;
     padding-left: 30px;
 }
-
-
 
 .thingy{
     background: url(note2.png);
@@ -113,18 +146,7 @@ button{
     top: -20px;
 }
 
-.dice{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-}
 
-.dice img{
-    width: 180px;
-    cursor: pointer;
-}
 
 #button{
     font-size: 30px;

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inconsolata:wght@200..900&family=Jersey+15&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Monoton&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans", serif;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-family: "Charm", cursive;
+    font-weight: 700;
+}
+
+body{
+    background-color: rgb(0, 0, 40) ;
+}
+
+
+.keys{
+    display: flex;
+}
+
+
+.keyr{
+    border-left: black 2px solid ;
+    border-right: black 2px solid ;
+    border-bottom: black 2px solid ;
+    background-color: black;
+    width: 150px;
+    height: 400px;
+    position: absolute; 
+    left: 145px;
+    top: 0;
+    color: white;
+    z-index: 1;
+    font-size: 60PX;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 75px;
+}
+
+.key{
+    border: black 2px solid ;
+    width: 250px;
+    height: 600px;    
+    position: relative;
+    font-size: 150PX;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: white;
+}
+
+.octaves{
+    display: flex;
+    align-items: end;
+    height:225px;
+}
+
+.octave{
+    width:220px;
+    height: 150px;
+    font-size: 30px;
+    text-align: center;
+    border: 2px rgb(0, 0, 0) solid;
+    background-color: #282828;
+    outline: none;
+    caret-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    color: #cccccc;
+}
+
+#length{
+    color: red;
+    width:220px;
+    height: 150px;
+    font-size: 30px;
+    text-align: center;
+    border: 5px rgb(0, 0, 0) solid;
+    background-color: #151515;
+    outline: none;
+    caret-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    border-right: black solid 10px inset;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 100;
+}
+
+.ope{
+position: relative;
+}
+      
+.control{
+    background-color: rgb(25, 0, 0);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    position: absolute;
+    gap: 30px;
+    right: 0;
+    font-size: 25px;
+    width: 30.5px;
+    z-index: 2;
+    border-top:5px solid black;
+    border-bottom:5px solid black;
+}
+
+.control p{
+    letter-spacing: 1.5px;
+    width: max-content;
+    padding: 4px;
+    cursor: pointer;
+    border-radius:5px ;
+}
+
+
+.control p:hover{
+    box-shadow: 0 0 5px red inset;
+    text-shadow: 0 0 3px red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.lines{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 100%;
+    box-shadow: 0 0 20px inset black;
+}
+
+.line{
+    box-shadow: 0 0 10px rgb(50, 0, 0);
+    width: 210px;
+    height: 10px;
+    background-color: rgba(90, 0, 0, 0.5);
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <link rel="shortcut icon" href="notes/piano.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="keys">
+        <div class="key">
+            <div class="keyr">
+                <h1>Q</h1>
+                <p>Bb0</p> 
+            </div>
+         <p>A0</p>
+        </div>
+        <div class="key">
+            <div class="keyr">
+                <h1>W</h1>
+                <p>Db1</p> 
+            </div>
+         <p>B0</p>
+        </div>
+
+        <div class="key">
+            <p>C1</p>
+        </div>
+
+        <div class="key">
+            <div class="keyr">
+                <h1>S</h1>
+                <p>Eb1</p> 
+            </div>
+            <p>D1</p>
+        </div>
+        
+        <div class="key">
+            <div class="keyr">
+                <h1>Z</h1>
+                <p>Gb1</p> 
+            </div>
+           <p>E1</p> 
+        </div>
+        
+        <div class="key">
+            <div class="keyr">
+                <h1>X</h1>
+                <p>Ab1</p> 
+            </div>
+            <p>F1</p>
+        </div>
+        
+        <div class="key">
+            <p>G1</p>
+        </div>
+
+    </div>
+    <div class="octaves">
+        <div style="background-color: hsl(0 100% 30%); box-shadow: 0px 0px 40px hsl(0 100% 30%); color: white;" class="octave"><p>1</p></div>
+        <div class="octave"><p>2</p></div>
+        <div class="octave"><p>3</p></div>
+        <div class="octave"><p>4</p></div>
+        <div class="octave"><p>5</p></div>
+        <div class="octave"><p>6</p></div>
+        <div class="octave"><p>7</p></div>
+        <div class="ope">
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="control">
+                <p id="up">/\</p>
+                <p id="down">\/</p>
+            </div>
+            <input id="length" type="number" max="20" min="0" value="0" onkeydown= "return false">
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -124,3 +124,24 @@ print(change("laptop"))
 print("hello"[4])
 
 print(type(gio))
+
+x = " "
+print("saba" + "da" + "gio")
+
+numbers = [1,2,5,64,3,8,6,53,1,6]
+
+print(sorted(numbers))
+
+number = "hello"
+print(type(number))
+
+# int() = აქცევს string-ს integer-ად
+# str() = ცვლადს აქცევს string-ად
+# type() მონაცემთა ტიპს ამოწმებს 
+
+number = 5
+print("Result: " + str(number))
+
+print("Gio" == "gio")
+
+print("Giorgi " + "Giorgobiani")
