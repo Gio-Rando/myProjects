@@ -9,6 +9,10 @@ let n = 0;
 let len = document.getElementById("length");
 let long = document.getElementById("up");
 let short = document.getElementById("down")
+let start = true
+let play = document.getElementById("play")
+
+
 const audioNotes = {
     "A0": ["./notes/A0.mp3",0,30],
     "Bb0": ["./notes/Bb0.mp3",19.53,30],
@@ -99,6 +103,20 @@ const audioNotes = {
     "B7": "./notes/B7.mp3",
     "C8": "./notes/C8.mp3"
 };
+
+play.addEventListener("click",()=>{
+    
+    if(start){
+    for(let i = 0 ; i < Object.keys(audioNotes).length - 4;i++){
+        audio = new Audio(Object.values(audioNotes)[i][0])
+        audio.currentTime = 3
+        audio.play()
+        start = false}   
+}
+play.style.display = "none"
+})
+
+
 
 let allWhites = ["A0","B0","C1","D1","E1","F1","G1","A1","B1","C2","D2","E2","F2","G2","A2","B2","C3","D3","E3","F3","G3","A3","B3","C4","D4","E4","F4","G4","A4","B4","C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6","A6","B6","C7","D7","E7","F7","G7","A0","B0","C1","D1","E1","F1","G1"]
 let allBlacks = ["Bb0","Db1","Eb1","Gb1","Ab1","Bb1","Db2","Eb2","Gb2","Ab2","Bb2","Db3","Eb3","Gb3","Ab3","Bb3","Db4","Eb4","Gb4","Ab4","Bb4","Db5","Eb5","Gb5","Ab5","Bb5","Db6","Eb6","Gb6","Ab6","Bb6","Db7","Eb7","Gb7","Ab7","Bb0","Db1","Eb1","Gb1","Ab1"]
@@ -539,3 +557,4 @@ document.addEventListener("keydown",(e) => {
 
     
 });
+
