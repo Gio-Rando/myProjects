@@ -145,3 +145,17 @@ print("Result: " + str(number))
 print("Gio" == "gio")
 
 print("Giorgi " + "Giorgobiani")
+
+#if _ თუ
+
+
+# print(2<x)
+
+number = input("შემოიტანეთ რიცხვი: ")
+
+if number == "11":
+    print("შენ ხარ სწორი")
+else:
+    print("შენ არ ხარ სწორი")
+
+
