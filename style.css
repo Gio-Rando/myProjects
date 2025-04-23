@@ -39,6 +39,8 @@ body{
     border: 5px solid lime;
     flex-wrap: wrap;
     box-shadow: 0 0 20px lime;
+    align-items: center;
+    justify-content: center;
 }
 
 .projects div{
