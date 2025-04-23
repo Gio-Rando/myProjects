@@ -151,7 +151,7 @@ print("Giorgi " + "Giorgobiani")
 
 # print(2<x)
 
-number = input("შემოიტანეთ რიცხვი: ")
+# number = input("შემოიტანეთ რიცხვი: ")
 
 if number == "11":
     print("შენ ხარ სწორი")
@@ -159,3 +159,53 @@ else:
     print("შენ არ ხარ სწორი")
 
 
+class Car:
+    def __init__(self,brand,color,hp,year):
+        self.color = color
+        self.brand = brand
+        self.hp = hp
+        self.year = year
+
+class Car1:
+    def __init__(self,brand,color,hp,year):
+        self.color = color 
+        self.brand = brand
+        self.hp = hp
+        self.year = year
+
+car1 = Car("Mercedes","White","1000",2024)
+car2 = Car1(Car("Mercedes","White","1000",2024),"White","1000",2024)
+print(car2.brand.color)
+
+# name = input("Enter your name: ")
+# print(name)
+
+num1 = 15 
+num2 = "15"
+print(num1+int(num2))
+
+# integer string boolean float
+
+# int = 1, 2, 3, 4, 5, 6....
+# float = 1.2 , 3.7, 8.9, 2.4  ...
+# str = "12", "1.6" , "zura", '12', 'luka'
+# boolean = True False
+
+
+print(int(10 / 2))
+print(10 // 2)
+print("hi"*5)
+
+print(2<3 and 3>8)
+
+# num1 = input("enter a first number: ")
+# num2 = input("enter a second number: ")
+
+# if int(num1) == int(num2):
+#     print(num1 + " is equel to " + num2)
+# elif int(num1) > int(num2):
+#     print(num1 + " bigger than " + num2)
+# else:
+#     print(num2 + " bigger than " + num1)
+print(not(5<5))
+#     not False

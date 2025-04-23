@@ -102,7 +102,6 @@ document.addEventListener("keydown" , event => {
             audioBlack[i].muted = volumes
         }
     }
-    
 })
 
 document.addEventListener("keyup" , event => {
@@ -150,7 +149,7 @@ document.addEventListener("keydown",(e) => {
             next = (ne / 7)+1}}
     else if(e.key == "ArrowLeft"){
         ne--
-        n--
+        n-=.7
         if(ne < 0){
             ne = 48}
         if(n < 0){
@@ -197,4 +196,5 @@ document.addEventListener("keydown",(e) => {
             black[i].style.background ="#000";
         }
         for(let i = 0; i , white.length;i++){
-            white[i].lastElementChild.textContent = `${allWhites[i+ne]}`}}})
+            white[i].lastElementChild.textContent = `${allWhites[i+ne]}`}}
+})

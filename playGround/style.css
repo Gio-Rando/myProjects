@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(28, 28, 28);
+}
+
+img{
+    border-radius: 20px;
+}
+
 .div{
     width: 30px;
     height: 30px;
@@ -42,6 +54,8 @@
 
 p{
     color: blue;
+    display: inline;
+    
 }
 
 span{

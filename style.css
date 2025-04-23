@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'aquatico', sans-serif;
+    font-weight: 700;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:url();
+    background-size: cover;
+    background-position: center;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+}
+
+.projects{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 40px;
+    gap: 20px;
+    padding: 50px;
+    border-radius: 20px;
+    background:url(./asset/lime.png);
+    background-size: cover;
+    background-position: center;
+    border: 5px solid lime;
+    flex-wrap: wrap;
+    box-shadow: 0 0 20px lime;
+}
+
+.projects div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 130px;
+    border-radius: 10px;
+    border: 2px solid lime;
+
+}
+
+a{
+    background-color: rgb(10, 177, 232);
+    border: 3px solid lime;
+    padding: 10px;
+    color: lime;
+    border-radius: 15px;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a:hover{
+    filter: drop-shadow(lime 0 0 10px);
+    background-color: rgb(0, 200, 150);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estia</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cont">
+            <div class="d">                
+                <textarea placeholder="Write here..." id="edit"></textarea>
+                <p id="myp"><mark id="mark"></mark>Write here...</p>
+                <div id="AI">
+
+                </div>
+            </div>
+            <input id="ge" type="submit" value="Read"> 
+            <input id="gen" type="submit" value="Generate"> 
+        </div>
+        
+        <div class="controls">
+            <img src="./assets/pause-circle-svgrepo-com (1).svg" alt="" id="pop">
+            <img src="./assets/restart-circle-svgrepo-com.svg" alt="" id="restart">
+            <div class="speed">
+                <img src="./assets/Screenshot 2025-04-08 231728.png" alt="">
+                <div id="fir"></div>
+                <div id="arrows">
+                    <img src="./assets/rewind-back-svgrepo-com.svg" alt="">
+                    <img src="./assets/rewind-forward-svgrepo-com.svg" alt="">
+                </div>
+                <input id="speed" type="number" value="10" max="25" min="-25" step="5" value="0"  onkeydown= "return false">
+            </div>
+            <select id="select">
+                <option value="None">None</option>
+            </select>
+            <div class="byby">
+                <p>LetterByLetter</p>
+            </div>
+            <div id="noise">
+                <p>Pink</p>
+                <p>Brown</p>
+                <p>White</p>
+                <p>Classical</p>
+                <p>Cafe</p>
+                <p style="background-color: #009fe3">None</p>
+            </div>
+            <input type="range" min="0" max="10" id="noi" type="range">
+            <input id="sub" type="submit" value="Save">
+        </div>
+    </div>
+    
+        
+    
+    <script src="script.js"></script>
+</body>
+</html>
