@@ -17,12 +17,12 @@ body{
     justify-content:center;
     align-items: start;
     overflow: hidden;
-    background: linear-gradient( rgb(0, 10,47),rgb(10, 0, 47));
+    background: linear-gradient( rgb(0, 5,24),rgb(5, 0, 24));
     Font-family: Segoe UI;
 }
 
 h1{
-    color: lime;
+    color: blue;
     position:absolute;
     font-size: 35px;
     top: 20px;
@@ -54,11 +54,11 @@ form{
 }
 
 .collapsible label{
+    color: magenta;
     position: relative;
     font-weight: 600;
     background-color: #fff;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .1),0 4px 11px 0 rgba(0, 0, 0, .08);
-    color: yellow;
     display: block;
     cursor: pointer;
     padding: 15px;
@@ -66,7 +66,7 @@ form{
     z-index: 2;
     font-weight: 700;
     margin: 5px;
-    background: linear-gradient(to top, rgb(0, 20,67),rgb(30, 0, 57));
+    background: linear-gradient(to top, rgb(0, 10,34),rgb(15, 0, 29));
     max-height: 52px;
 
 }
@@ -89,7 +89,10 @@ form{
     z-index: 0;
     border-radius: 4px;
     padding: 1px;
-    background: conic-gradient(from var(--angle),red,yellow,lime,blue,magenta,red);
+    background: conic-gradient(from var(--angle),rgba(255, 255, 255, 0),magenta,blue);
+
+
+
     animation: 3s linear spin infinite;
 }
 
@@ -109,9 +112,10 @@ form{
     top: 15px;
     width: 18px;
     height: 18px;
-    background:url("./play (2).png");
+    background:url("./play (3).png");
     background-size: cover;
     transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px blue);
 }
 
 .collapsible input:checked ~ .label label::after {
@@ -142,7 +146,8 @@ form{
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    background: conic-gradient(from var(--angle),red,yellow,lime,blue,magenta,red);
+    background: conic-gradient(from var(--angle),rgba(255, 255, 255, 0),magenta,blue);
+
     z-index: -1;
     border-radius: 4px;
     animation: 3s linear spin infinite;
@@ -162,11 +167,11 @@ form{
 
 
 .white{
-    background: radial-gradient( rgb(0, 20,67),rgb(30, 0, 57));
+    background: radial-gradient( rgb(0, 10,34),rgb(15, 0, 29));
     width: 100%;
     padding-bottom: 25px;
     margin: 5px;
-    color: cyan;
+    color: magenta;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -184,11 +189,11 @@ label{
 }
 
 .collapsible-text i{
-    color: magenta
+    color: blue
 }
 
 .collapsible-text h4{
-    color: lime
+    color: blue
 }
 
 

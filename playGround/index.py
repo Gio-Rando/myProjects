@@ -241,5 +241,6 @@ print(sorted("12345678"))
 
 print(10%6)
 
+x = int(input("input: "))
 
-print(sum([1,9,9,9,9,0],[9,9,9]))
+print(x//2)

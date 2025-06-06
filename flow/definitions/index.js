@@ -44,7 +44,7 @@ for(let i = 0 ; i < save.length ;i++){
 
 for (let i = 0; i < checker.length; i++) {
     checker[i].addEventListener("click",()=>{
-        checker[i].style.color = "yellow"
+        checker[i].style.color = "magenta"
         checker[i].style.border = ""
     })    
 }
