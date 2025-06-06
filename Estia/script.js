@@ -14,11 +14,6 @@ let voices = []
 const select = document.getElementById("select")
 let trfa= false
 let len = 0
-const pauses = {
-    0.5 : [1290,68,414],
-    1:[1200,48,300],
-    1.5: [965,42,270]
-}
 
 const ai = document.getElementById("AI")
 const p = document.getElementById("myp")
@@ -39,6 +34,7 @@ const arrows = document.getElementById("arrows")
 const by = document.getElementsByClassName("byby")
 let interval
 speechSynthesis.cancel();
+let paused = true
 
 arrows.children[1].addEventListener("click",()=>{
     clearInterval(interval)
@@ -48,7 +44,7 @@ arrows.children[1].addEventListener("click",()=>{
         speed.value=Number(speed.value)+5}
         fir.style.transform = `rotate(${(speed.value-10) * 16}deg)`
     if(select.value != "None" && pop.getAttribute("src")){
-        select.value = "None"
+        select.value = "Disabled"
         select.setAttribute("disabled","")
         pop.src = "./assets/pause-circle-svgrepo-com (1).svg"
         clearInterval(interval)
@@ -108,9 +104,8 @@ sub.addEventListener("click",()=>{
 })
 
 function PV(){
-    voices = speechSynthesis.getVoices().filter(voice => voice.name.startsWith("Microsoft David") || voice.name.startsWith("Microsoft George"));
+    voices = speechSynthesis.getVoices()
     select.innerHTML += voices.map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
-
 }
 
 function SV(){
@@ -126,13 +121,16 @@ select.addEventListener("change",SV)
 PV() 
 let tts = ( )=> {
     speech.rate = Number(speed.value) / 10
-    speech.text = para.replaceAll("!",".").replaceAll("?",".").replaceAll("\n"," ").replaceAll(",",".").replaceAll("("," ").replaceAll(")", " ").replaceAll(":"," ");
+    speech.text = para
     const selectedVoice = voices.find(voice => voice.name === select.value);
-    if (selectedVoice){
+    if (selectedVoice && by[0].children[0].textContent == "Voice" && paused){
         speech.voice = selectedVoice;
         speechSynthesis.speak(speech)
     }
-        speechSynthesis.pause()
+    speechSynthesis.pause()
+    if (pop.getAttribute("src") == "./assets/pause-circle-svgrepo-com (1).svg" && sub.value=="Edit"){
+             speechSynthesis.resume()
+    }
 }
 
 select.addEventListener("click",()=>{
@@ -144,40 +142,35 @@ select.addEventListener("change",()=>{
     speechSynthesis.cancel()
     pop.src = "./assets/pause-circle-svgrepo-com (1).svg"
     clearInterval(interval)
-    if(select.value!="None"){
+    if(by[0].children[0].textContent == "Voice"){
     p.childNodes[1].textContent = para
     mark.textContent = ""
 }})
 
 let highlight = ()=>{
+    speed.value=Number(speed.value)
     if(by[0].children[0].textContent == "LetterByLetter"){
         if (pop.getAttribute("src") == "./assets/pause-circle-svgrepo-com (1).svg" && sub.value=="Edit"){
-            tts()
-            speech.rate = Number(speed.value) / 10
-            speechSynthesis.resume()
             pop.src = "./assets/play-button-o-svgrepo-com.svg"
             let over = ()=>{
+                speed.value=Number(speed.value)
                 if (mark.textContent.length < p.textContent.length){
                     if(",.!?%$".includes(p.childNodes[1].textContent[0])){
                         setTimeout(()=>{ 
                             trfa = false
-                        },pauses[speech.rate][0])
+                        },750)
                         trfa= true
                         mark.textContent += p.childNodes[1].textContent[0]
                         p.childNodes[1].textContent = p.childNodes[1].textContent.slice(1,)
+                        
                     }
                     else if(!trfa){
                             mark.textContent += p.childNodes[1].textContent[0]
                             p.childNodes[1].textContent = p.childNodes[1].textContent.slice(1,)}
                     }
-                else{
-                    setTimeout(()=>{speechSynthesis.cancel()},500)
-                    
-                }
-            
 
         }
-        interval = setInterval(over,pauses[speech.rate][1])
+        interval = setInterval(over, Number(speed.value)*-3+75)
     }
 
     else{
@@ -191,17 +184,15 @@ let highlight = ()=>{
         speechSynthesis.pause()
 }
 }
-    else{
+    else if (by[0].children[0].textContent == "WordByWord"){
         if (pop.getAttribute("src") == "./assets/pause-circle-svgrepo-com (1).svg" && sub.value=="Edit"){
-            tts()
             pop.src = "./assets/play-button-o-svgrepo-com.svg"
-            speechSynthesis.resume()
             let over = ()=>{
                 if (mark.textContent.length < p.textContent.length){
                     if(("%,.!?".includes(p.childNodes[1].textContent.split(" ")[0].slice(-1)) || p.childNodes[1].textContent.split(" ")[0].includes("\n")) && !trfa){
                         setTimeout(()=>{ 
                             trfa = false
-                        },pauses[speech.rate][0])
+                        },750)
                         
                         trfa= true
                         mark.textContent += p.childNodes[1].textContent.split(" ")[0] + " "
@@ -211,18 +202,32 @@ let highlight = ()=>{
                         mark.textContent += p.childNodes[1].textContent.split(" ")[0] + " "
                         p.childNodes[1].textContent = p.childNodes[1].textContent.split(" ").slice(1,).join(" ");}
                     }
-                    else{
-                        setTimeout(()=>{speechSynthesis.cancel()},500);
-                    }
+                    
                     
                 }
-                interval = setInterval(over,pauses[speech.rate][2])
+                console.log(800+Number(speed.value)*-40)
+                interval = setInterval(over,800+Number(speed.value)*-40)
             }
             
             else{
                 speechSynthesis.pause()
                 pop.src = "./assets/pause-circle-svgrepo-com (1).svg"
                 clearInterval(interval)
+            }
+        }
+        else{
+            if (pop.getAttribute("src") == "./assets/pause-circle-svgrepo-com (1).svg" && sub.value=="Edit"){
+            tts()
+            p.childNodes[1].textContent = para
+            mark.textContent = ""
+            pop.src = "./assets/play-button-o-svgrepo-com.svg"
+        }
+                        
+            else{
+                speechSynthesis.pause()
+                pop.src = "./assets/pause-circle-svgrepo-com (1).svg"
+                clearInterval(interval)
+                paused= false
             }
         }
     }
@@ -236,8 +241,13 @@ by[0].addEventListener("click",()=>{
     if(by[0].children[0].textContent == "LetterByLetter"){
         by[0].children[0].textContent = "WordByWord"
     }
+    else if (by[0].children[0].textContent == "WordByWord"){
+        by[0].children[0].textContent = "Voice"
+        select.style.display ="block"
+    }
     else{
         by[0].children[0].textContent = "LetterByLetter"
+        select.style.display ="none"
     }
 })
 
@@ -248,6 +258,7 @@ restart.addEventListener("click", ()=>{
     mark.textContent = ""
     speechSynthesis.cancel()
     select.removeAttribute("disabled")
+    paused= true
 })
 
 
@@ -287,7 +298,7 @@ gen.addEventListener("click", async () => {
     ai.style.display = "block"
     if(gen.value == "Generate"){
         ai.innerHTML='<article class="load"><h1>Generating</h1><h1 class="o">.</h1><h1 class="n">.</h1><h1 class="e">.</h1></article>'
-        const prompt = `'${para?.trim()}'--> If the text says "Write here...", or is empty, or makes no sense, then only write this: Please Try Again. If the text is okay: Make more than 5 questions about it, make sure that the questions are in the same language as the text and make sure that you sre using correct language double check it,Each question must go inside a <div>,Put the question itself in an <h2>,Each question needs 3 answer choices,Use <input type="radio"> for the answers,Each <input> must have a <label> and they should be inside <label>,Do NOT put the answer choices in any <div>,Do NOT use <br> tags,Only one answer should be correct,Give the correct input answer the class "correct",Give the wrong input answers the class "incorrect",Do NOT write anything else — only the questions and answers,Make sure the questions are about the topic from the text.`;
+        const prompt = `'${para?.trim()}'--> If the text says "Write here...", or is empty, or makes no sense, then only write this: Please Try Again. If the text is okay: Make more than 5 questions about it, make sure that the questions are in the same language as the text and make sure that you sre using correct language check it multiple times!!,Each question must go inside a <div>,Put the question itself in an <h2>,Each question needs 3 answer choices,Use <input type="radio"> for the answers,Each <input> must have a <label> and they should be inside <label>,Do NOT put the answer choices in any <div>,Do NOT use <br> tags,Only one answer should be correct,Give the correct input answer the class "correct",Give the wrong input answers the class "incorrect",Do NOT write anything else — only the questions and answers,Make sure the questions are about the topic from the text.`;
         try {
             const response = await fetch("http://localhost:3000/generate", {
             method: "POST",

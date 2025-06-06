@@ -198,6 +198,13 @@ print("hi"*5)
 
 print(2<3 and 3>8)
 
+
+
+
+
+
+
+
 # num1 = input("enter a first number: ")
 # num2 = input("enter a second number: ")
 
@@ -207,5 +214,32 @@ print(2<3 and 3>8)
 #     print(num1 + " bigger than " + num2)
 # else:
 #     print(num2 + " bigger than " + num1)
+
+
+
+
+
+
+
+
+
+
+
+
+
 print(not(5<5))
 #     not False
+
+print(sorted("12345678"))
+
+
+# int = 1,2,3,4,5,6,7,-1,-2,-3..._ მთელი რიცხვები
+# float = 0.5,0.9.15.16..._ ათწილადები
+# str = "Ani", "12","0.8", '1'_ ყველაფერი ბრჭყალებშია
+# boolean = True False _ სიმართლე ან სიცრუე
+
+
+print(10%6)
+
+
+print(sum([1,9,9,9,9,0],[9,9,9]))

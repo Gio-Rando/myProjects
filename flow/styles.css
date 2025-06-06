@@ -1,0 +1,220 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    pointer-events: all;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items: start;
+    overflow: hidden;
+    background: linear-gradient( rgb(0, 10,47),rgb(10, 0, 47));
+    Font-family: Segoe UI;
+}
+
+h1{
+    color: lime;
+    position:absolute;
+    font-size: 35px;
+    top: 20px;
+    animation: glow 5s ease infinite;
+    text-shadow: 0 0 15px ;
+}
+
+form{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wrapper{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+}
+
+.collapsible{
+    font-weight: 500;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.collapsible label{
+    position: relative;
+    font-weight: 600;
+    background-color: #fff;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .1),0 4px 11px 0 rgba(0, 0, 0, .08);
+    color: yellow;
+    display: block;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    z-index: 2;
+    font-weight: 700;
+    margin: 5px;
+    background: linear-gradient(to top, rgb(0, 20,67),rgb(30, 0, 57));
+    max-height: 52px;
+
+}
+
+.label{
+    width: 450px;
+    position: relative;
+    border-radius: 4px;
+    width: 450px;
+}
+
+.label::after, .label::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 0;
+    border-radius: 4px;
+    padding: 1px;
+    background: conic-gradient(from var(--angle),red,yellow,lime,blue,magenta,red);
+    animation: 3s linear spin infinite;
+}
+
+.label::before{
+    filter: blur(2rem);
+    opacity: 0.5;
+}
+
+.collapsible input{
+    display: none;
+}
+
+.collapsible label::after{
+    content: "";
+    position: absolute; 
+    right: 15px;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    background:url("./play (2).png");
+    background-size: cover;
+    transition: all 0.3s ease;
+}
+
+.collapsible input:checked ~ .label label::after {
+    transform: rotate(90deg);
+}
+
+.collapsible-text{
+    margin-top: 20px;
+    max-height: 1px;
+    border-radius: 4px;
+    line-height: 1.4;
+    position: relative;
+    top:-65%;
+    opacity: 0.5;
+    transition: all 2s ease;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    width: 450px;
+}
+
+
+.collapsible-text::after,.collapsible-text::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background: conic-gradient(from var(--angle),red,yellow,lime,blue,magenta,red);
+    z-index: -1;
+    border-radius: 4px;
+    animation: 3s linear spin infinite;
+}
+
+.collapsible-text::before{
+    filter: blur(2rem);
+    opacity: 0.5;
+}
+
+.collapsible input:checked ~ .collapsible-text {
+    max-height: 300px;
+    box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.1),0 4px 11px 0 rgba(255, 255, 255, 0.08);
+    opacity: 1;
+    top: 0;
+}
+
+
+.white{
+    background: radial-gradient( rgb(0, 20,67),rgb(30, 0, 57));
+    width: 100%;
+    padding-bottom: 25px;
+    margin: 5px;
+    color: cyan;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.collapsible-text h4, p, i{
+    padding: 15px 15px 0;
+    text-shadow: 0 0 15px ;
+
+}
+
+label{
+    text-shadow: 0 0 15px ;
+
+}
+
+.collapsible-text i{
+    color: magenta
+}
+
+.collapsible-text h4{
+    color: lime
+}
+
+
+@keyframes spin {
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+.save {
+  display: inline-block;
+}
+
+input{
+    background-color: rgb(0, 30, 0);
+    border: lime solid 4px;
+    font-size: 30px;
+    color: lime;
+    border-radius: 15px;
+    padding: 10px;
+    width: max-content;
+    text-align: center;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    box-shadow: 0 0 15px lime;
+}

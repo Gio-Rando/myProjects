@@ -19,8 +19,10 @@ function initializeGame() {
     newBlock: false,
     draw() {
       ctx.fillStyle = "rgb(128,0,255)";
+      ctx.strokeStyle = "rgb(255, 128, 128)";
       this.body.forEach(block => {
         ctx.fillRect(block.x * cellSize, block.y * cellSize, cellSize, cellSize);
+        ctx.strokeRect(block.x * cellSize, block.y * cellSize, cellSize, cellSize);
       });
     },
     move() {

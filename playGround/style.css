@@ -9,30 +9,96 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(28, 28, 28);
+    overflow: hidden;
+    background-image: url(https://sdmntprwestus.oaiusercontent.com/files/00000000-e110-6230-9837-3fcbc96ab9f0/raw?se=2025-06-05T19%3A27%3A28Z&sp=r&sv=2024-08-04&sr=b&scid=5256872a-ed09-5f84-976b-553b043c5e5c&skoid=1e6af1bf-6b08-4a04-8919-15773e7e7024&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-05T17%3A02%3A06Z&ske=2025-06-06T17%3A02%3A06Z&sks=b&skv=2024-08-04&sig=02C53QB7HTra3JHbyXHEnReQcUv/dMzfT9Pww1ahMqk%3D);
+    background-repeat: no-repeat;
+    background-size: contain;
+    Font-family: Segoe UI;
 }
 
-img{
-    border-radius: 20px;
-}
-
-.div{
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 255, 255, 0);
-    animation-name: glitch;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    transition: 0.3s;
-    cursor: pointer;
+.container{
     display: flex;
-    justify-self: center;
-    margin: 7px;    
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.div:active{
-    transform: scale(1.5);
+.wrapper{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
 }
+
+.collapsible{
+    max-width: 450px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapsible label{
+    position: relative;
+    font-weight: 600;
+    background-color: #fff;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .1),0 4px 11px 0 rgba(0, 0, 0, .08);
+    color: #1c1c6c;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.collapsible input{
+    display: none;
+}
+
+.collapsible label::after{
+    content: "";
+    position: absolute; 
+    right: 15px;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    background-color: #1c1c6c;
+    transition: all 0.3s ease-in;
+}
+
+.collapsible input:checked + label::after{
+    transform: rotate(90deg);
+}
+
+.collapsible-text{
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    position: relative;
+    top:-100%;
+    opacity: 0.5;
+    transition: all 0.3s ease-in;
+}
+
+.collapsible input:checked ~ .collapsible-text{
+    max-height: 300px;
+    padding-bottom: 25px;
+    background-color: #fff;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .1),0 4px 11px 0 rgba(0, 0, 0, .08);
+    opacity: 1;
+    top: 0;
+}
+
+.collapsible-text h2{
+    margin-bottom: 10px;
+    padding: 15px 15px 0;
+    color: #021057;
+}
+
+.collapsible-text p{
+    margin-bottom: 10px;
+    padding: 15px 15px 0;
+    color: #021057;
+}
+
 
 @keyframes glitch{
     0%{
@@ -52,29 +118,20 @@ img{
     }
 }
 
-p{
-    color: blue;
-    display: inline;
-    
-}
-
-span{
-    color: red;
-}
-
-.parent{
-    width: 500px;
-    height: 500px;
-    background-color: green;
-}
-
-.child{
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    position: relative;
-}
-
-.item{
-    color: white;
+@keyframes grow{
+    0%{
+        background: radial-gradient(white,black 0%);
+    }
+    25%{
+        background: radial-gradient(white,black 25%);
+    }
+    50%{
+        background: radial-gradient(white,black 50%);
+    }
+    75%{
+        background: radial-gradient(white,black 75%);
+    }
+    100%{
+        background: radial-gradient(white,black 100%);
+    }
 }
