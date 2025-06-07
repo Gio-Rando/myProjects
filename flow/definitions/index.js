@@ -23,7 +23,7 @@ const collapsibleTexts = document.querySelectorAll('.collapsible-text');
 
 let lst = JSON.parse(localStorage.getItem("SaveDef")) || []
 let check = JSON.parse(localStorage.getItem("CheckDef")) || []
-let theme = JSON.parse(localStorage.getItem("ThemeDef")) || ["rgb(0, 10,34)","rgb(15, 0, 29)","magenta","blue"]
+let theme = JSON.parse(localStorage.getItem("ThemeDef")) || ["rgb(0, 10,34)","rgb(15, 0, 29)","blue","magenta"]
 
 
 document.addEventListener("keydown", (e) => {
@@ -66,7 +66,7 @@ for(let i = 0 ; i < save.length ;i++){
 
 for (let i = 0; i < checker.length; i++) {
     checker[i].addEventListener("click",()=>{
-        checker[i].style.color = "magenta"
+        checker[i].style.color = `${theme[3]}`
         checker[i].style.border = ""
     })    
 }
@@ -116,9 +116,9 @@ settings.addEventListener("submit",(e)=>{
         label[i].style.background = `linear-gradient( ${settings.one.value},${settings.two.value})` 
         label[i].style.filter= 'brightness(100%)';
         colText[i].style.background = `linear-gradient( ${settings.two.value},${settings.one.value})`     
-        labels[i].style.setProperty('--angle', '270deg');
+        labels[i].style.setProperty('--angle', '360deg');
         labels[i].style.setProperty('--conicColors', `rgba(255,255,255,0), ${settings.three.value}, ${settings.four.value}`)
-        collapsibleTexts[i].style.setProperty('--angle', '270deg');
+        collapsibleTexts[i].style.setProperty('--angle', '360deg');
         collapsibleTexts[i].style.setProperty('--conicColors',`rgba(255,255,255,0), ${settings.three.value}, ${settings.four.value}`);
     }
     localStorage.setItem("ThemeDef",JSON.stringify(theme))
@@ -138,9 +138,11 @@ for (let i = 0; i < label.length; i++) {
     label[i].style.background = `linear-gradient( ${theme[0]},${theme[1]})`
     label[i].style.filter= 'brightness(100%)';
     colText[i].style.background = `linear-gradient( ${theme[1]},${theme[0]})`     
-    labels[i].style.setProperty('--angle', '270deg');
+    labels[i].style.setProperty('--angle', '360deg');
     labels[i].style.setProperty('--conicColors', `rgba(255,255,255,0), ${theme[2]}, ${theme[3]}`)
-    collapsibleTexts[i].style.setProperty('--angle', '270deg');
+    collapsibleTexts[i].style.setProperty('--angle', '360deg');
     collapsibleTexts[i].style.setProperty('--conicColors', `rgba(255,255,255,0), ${theme[2]}, ${theme[3]}`)
     
 }
+form.save.style.background = `linear-gradient( ${theme[1]},${theme[0]})`
+form.save.style.color = `${theme[3]}`
