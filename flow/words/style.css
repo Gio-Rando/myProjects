@@ -63,18 +63,6 @@ input{
   }
 }
 
-@keyframes glow {
-    0%{
-        text-shadow: 0 0 0 white;
-    }
-    50%{
-        text-shadow: 0 0 5px white;
-    }
-    100%{
-        text-shadow: 0 0 0 white;
-    }
-}
-
 .animated {
   animation: fadeInUp 5s ease forwards;
 }
