@@ -97,8 +97,6 @@ close.addEventListener("click", () => {
 
 settings.addEventListener("submit", (e) => {
   e.preventDefault();
-  form.save.style.background = `linear-gradient( ${theme[1]},${theme[0]})`;
-  form.save.style.color = `${theme[3]}`;
   for (let i = 0; i < colorPicker.length; i++) {
     if (colorPicker[i].value == "#000000") {
       colorPicker[i].value = "#050505";
@@ -112,7 +110,7 @@ settings.addEventListener("submit", (e) => {
   ];
   body.style.background = `linear-gradient( ${settings.one.value},${settings.two.value})`;
   body.style.backdropFilter = "brightness(50%)";
-
+  
   for (let i = 0; i < three.length; i++) {
     three[i].style.color = `${settings.three.value}`;
   }
@@ -140,6 +138,8 @@ settings.addEventListener("submit", (e) => {
   }
   localStorage.setItem("ThemeDef", JSON.stringify(theme));
   settings.style.display = "none";
+  form.save.style.background = `linear-gradient( ${theme[1]},${theme[0]})`;
+  form.save.style.color = `${theme[3]}`;
 });
 
 body.style.background = `linear-gradient( ${theme[0]},${theme[1]})`;
