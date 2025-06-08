@@ -1,293 +1,289 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    pointer-events: all;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  pointer-events: all;
 }
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-
-body{
-    height: 100vh;
-    display: flex;
-    justify-content:center;
-    align-items: start;
-    overflow: hidden;
-    background: linear-gradient( rgb(0, 5,24),rgb(5, 0, 24));
-    Font-family: Segoe UI;
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
-h1{
-    color: blue;
-    position:absolute;
-    font-size: 35px;
-    top: 20px;
-    animation: glow 5s ease infinite;
-    text-shadow: 0 0 7px ;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow: hidden;
+  background: linear-gradient(rgb(0, 5, 24), rgb(5, 0, 24));
+  font-family: Segoe UI;
 }
 
-form{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+h1 {
+  color: blue;
+  position: absolute;
+  font-size: 35px;
+  top: 20px;
+  animation: glow 5s ease infinite;
+  text-shadow: 0 0 7px;
 }
 
-.wrapper{
-    display: flex;
-    padding-top: 50px;
-    justify-content: center;
+form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.collapsible{
-    font-weight: 500;
-    width: 800px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.wrapper {
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
 }
 
-.collapsible label{
-    color: magenta;
-    position: relative;
-    font-weight: 600;
-    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .1),0 4px 11px 0 rgba(0, 0, 0, .08);
-    display: block;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
-    z-index: 2;
-    font-weight: 700;
-    margin: 5px;
-    background: linear-gradient(to top, rgb(0, 10,34),rgb(15, 0, 29));
-    max-height: 52px;
-
+.collapsible {
+  font-weight: 500;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.label{
-    width: 450px;
-    position: relative;
-    border-radius: 4px;
-    width: 450px;
+.collapsible label {
+  color: magenta;
+  position: relative;
+  font-weight: 600;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
+  display: block;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  z-index: 2;
+  font-weight: 700;
+  margin: 5px;
+  background: linear-gradient(to top, rgb(0, 10, 34), rgb(15, 0, 29));
+  max-height: 52px;
 }
 
-.label::after, .label::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: 0;
-    border-radius: 4px;
-    padding: 1px;
-    background: conic-gradient(from var(--angle), var(--conicColors));
-    animation: 3s linear spin infinite;
+.label {
+  width: 450px;
+  position: relative;
+  border-radius: 4px;
+  width: 450px;
 }
 
-.label::before{
-    filter: blur(2rem);
-    opacity: 0.5;
+.label::after,
+.label::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 0;
+  border-radius: 4px;
+  padding: 1px;
+  background: conic-gradient(from var(--angle), var(--conicColors));
+  animation: 3s linear spin infinite;
 }
 
-.collapsible input{
-    display: none;
+.label::before {
+  filter: blur(2rem);
+  opacity: 0.5;
 }
 
-.collapsible label::after{
-   content: "\f04b";
+.collapsible input {
+  display: none;
+}
+
+.collapsible label::after {
+  content: "\f04b";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   position: absolute;
   right: 15px;
   top: 15px;
-  font-size: 18px;  
+  font-size: 18px;
   transition: all 0.3s ease;
 }
 
 .collapsible input:checked ~ .label label::after {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
-.collapsible-text{
-    margin-top: 20px;
-    max-height: 1px;
-    border-radius: 4px;
-    line-height: 1.4;
-    position: relative;
-    top:-65%;
-    opacity: 0.5;
-    transition: all 2s ease;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    width: 450px;
+.collapsible-text {
+  margin-top: 20px;
+  max-height: 1px;
+  border-radius: 4px;
+  line-height: 1.4;
+  position: relative;
+  top: -65%;
+  opacity: 0.5;
+  transition: all 2s ease;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  width: 450px;
 }
 
-
-.collapsible-text::after,.collapsible-text::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    background: conic-gradient(from var(--angle), var(--conicColors));
-    z-index: -1;
-    border-radius: 4px;
-    animation: 3s linear spin infinite;
+.collapsible-text::after,
+.collapsible-text::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background: conic-gradient(from var(--angle), var(--conicColors));
+  z-index: -1;
+  border-radius: 4px;
+  animation: 3s linear spin infinite;
 }
 
-.collapsible-text::before{
-    filter: blur(0.4rem);
+.collapsible-text::before {
+  filter: blur(0.4rem);
 }
 
 .collapsible input:checked ~ .collapsible-text {
-    max-height: 300px;
-    box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.1),0 4px 11px 0 rgba(255, 255, 255, 0.08);
-    opacity: 1;
-    top: 0;
+  max-height: 300px;
+  box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.1),
+    0 4px 11px 0 rgba(255, 255, 255, 0.08);
+  opacity: 1;
+  top: 0;
 }
 
-
-.white{
-    background: radial-gradient( rgb(0, 10,34),rgb(15, 0, 29));
-    width: 100%;
-    padding-bottom: 25px;
-    margin: 5px;
-    color: magenta;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+.white {
+  background: radial-gradient(rgb(0, 10, 34), rgb(15, 0, 29));
+  width: 100%;
+  padding-bottom: 25px;
+  margin: 5px;
+  color: magenta;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.collapsible-text h4, p, i{
-    padding: 15px 15px 0;
-    text-shadow: 0 0 15px ;
-
+.collapsible-text h4,
+p,
+i {
+  padding: 15px 15px 0;
+  text-shadow: 0 0 15px;
 }
 
-label{
-    text-shadow: 0 0 15px ;
-
+label {
+  text-shadow: 0 0 15px;
 }
 
-.collapsible-text i{
-    color: blue
+.collapsible-text i {
+  color: blue;
 }
 
-.collapsible-text h4{
-    color: white
+.collapsible-text h4 {
+  color: white;
 }
-
 
 @keyframes spin {
-    from{
-        --angle:0deg;
-    }
-    to{
-        --angle:360deg;
-    }
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 .save {
   display: inline-block;
 }
 
-input{
-    background-color: rgb(0, 30, 0);
-    border: solid 4px;
-    font-size: 30px;
-    border-radius: 15px;
-    padding: 10px;
-    width: max-content;
-    text-align: center;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    box-shadow: 0 0 15px ;
+input {
+  background-color: rgb(0, 30, 0);
+  border: solid 4px;
+  font-size: 30px;
+  border-radius: 15px;
+  padding: 10px;
+  width: max-content;
+  text-align: center;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  box-shadow: 0 0 15px;
 }
 
-.settings{
-    position: absolute; 
-    background-color: rgb(0, 0, 0,0.3);
-    z-index: 5; 
-    width: max-content; 
-    padding: 30px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    border: white solid 4px;
+.settings {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.3);
+  z-index: 5;
+  width: max-content;
+  padding: 30px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  border: white solid 4px;
 }
 
-.color{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-
+.color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
 }
 
-.colors{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+.colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.viscol{
-    background-color: black;
-    width: 100px;
-    height: 100px;
-    border-radius: 7.5px;
-    border: white solid 4px;
+.viscol {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  border-radius: 7.5px;
+  border: white solid 4px;
 }
-.colorborder{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 15px;
-    border: white solid 4px;
-}
-
-.settings p{
-    font-weight: 700;
-    font-size: 30px;
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 15px;
-    text-shadow: none;
+.colorborder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  border: white solid 4px;
 }
 
-.settings input{
-    color: white;
-    border: white solid 4px;
+.settings p {
+  font-weight: 700;
+  font-size: 30px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 15px;
+  text-shadow: none;
 }
 
-.settings h2{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: xx-large;
-    background-color: #fff;
-    width: max-content;
-    padding: 0px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+.settings input {
+  color: white;
+  border: white solid 4px;
+}
+
+.settings h2 {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: xx-large;
+  background-color: #fff;
+  width: max-content;
+  padding: 0px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
