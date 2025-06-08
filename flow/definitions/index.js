@@ -138,8 +138,8 @@ settings.addEventListener("submit", (e) => {
   }
   localStorage.setItem("ThemeDef", JSON.stringify(theme));
   settings.style.display = "none";
-  form.save.style.background = `linear-gradient( ${theme[1]},${theme[0]})`;
-  form.save.style.color = `${theme[3]}`;
+  form.save.style.background = `linear-gradient( ${ theme[1]},${theme[0]}`
+  form.save.style.color = `${ theme[3]}`
 });
 
 body.style.background = `linear-gradient( ${theme[0]},${theme[1]})`;
