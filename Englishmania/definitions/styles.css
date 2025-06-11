@@ -54,7 +54,6 @@ form {
 .collapsible label {
   color: magenta;
   position: relative;
-  font-weight: 600;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
   display: block;
   cursor: pointer;
@@ -68,7 +67,6 @@ form {
 }
 
 .label {
-  width: 450px;
   position: relative;
   border-radius: 4px;
   width: 450px;
@@ -286,4 +284,51 @@ input {
   padding: 0px 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+
+@media  (max-width: 1100px) {
+  h1{
+    font-size: 75px;
+  }
+   .label {
+    width: 900px;
+    font-size: 46px;
+    padding: 5px;
+    margin-top: 50px;
+  }
+  .collapsible label{
+    max-height: none;
+    border-radius: 8px;
+
+  }
+  .collapsible-text{
+    width: 900px;
+    font-size: 46px;
+    padding: 5px;
+    border-radius: 16px;
+  }
+.collapsible-text::before {
+  filter: blur(2rem);
+}
+.collapsible-text::after,
+.collapsible-text::before {
+  border-radius: 12px;
+}
+.white{
+  border-radius: 12px;
+}
+.label::after,
+.label::before {
+  border-radius: 12px;
+}
+.label::before {
+  filter: blur(4rem);
+  opacity: 0.5;
+}
+.collapsible label::after {
+  right: 30px;
+  top: 30px;
+  font-size: 36px;
+}
 }

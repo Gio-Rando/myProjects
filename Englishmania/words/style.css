@@ -46,7 +46,6 @@ input{
 .editable {
   display: inline-block;
   min-width: 50px;
-  font-size: 16px;
   white-space: pre;
   outline: none;
   font-size: 25px;
@@ -77,4 +76,18 @@ form{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media  (max-width: 1100px) {
+  table{
+    width: 700px;
+    height: 1052px;
+  }
+  th{
+    font-size: 60px;
+  }
+  .editable{
+    font-size: 50px;
+    min-width: 100px;
+  }
 }
