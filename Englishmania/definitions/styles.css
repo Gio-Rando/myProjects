@@ -294,7 +294,7 @@ input {
   }
    .label {
     width: 900px;
-    font-size: 46px;
+    font-size: 36px;
     padding: 5px;
   }
   .collapsible label{
@@ -304,7 +304,7 @@ input {
   }
   .collapsible-text{
     width: 900px;
-    font-size: 46px;
+    font-size: 36px;
     padding: 5px;
     border-radius: 16px;
   }
@@ -317,6 +317,7 @@ input {
 }
 .white{
   border-radius: 12px;
+  padding: 5px;
 }
 .label::after,
 .label::before {
@@ -327,8 +328,8 @@ input {
   opacity: 0.5;
 }
 .collapsible label::after {
-  right: 30px;
-  top: 30px;
+  right: 20px;
+  top: 20px;
   font-size: 36px;
 }
 }
