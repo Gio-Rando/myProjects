@@ -22,11 +22,11 @@ body {
 
 h1 {
   color: blue;
-  position: absolute;
   font-size: 35px;
   top: 20px;
   animation: glow 5s ease infinite;
   text-shadow: 0 0 7px;
+  text-align: center;
 }
 
 form {
@@ -290,12 +290,14 @@ input {
 @media  (max-width: 1100px) {
   h1{
     font-size: 75px;
+    margin-bottom: 25px;
+    position: static;
+    margin-top: 75px;
   }
    .label {
     width: 900px;
     font-size: 46px;
     padding: 5px;
-    margin-top: 50px;
   }
   .collapsible label{
     max-height: none;
