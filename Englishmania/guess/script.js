@@ -87,6 +87,14 @@ close.addEventListener("click", () => {
   settings.style.display = "none";
 });
 
+form.clear.addEventListener("click", (e)=>{
+  e.preventDefault()
+  for (let i = 0; i < image.length - 1; i++) {
+    image[i].value = ""
+    guessWord[i].value = ""
+  }
+})
+
 settings.addEventListener("submit", (e) => {
   e.preventDefault();
   form.style.display = "none";
