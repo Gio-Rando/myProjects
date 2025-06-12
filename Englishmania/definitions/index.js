@@ -3,7 +3,7 @@ const save = document.getElementsByClassName("save");
 const checker = document.getElementsByClassName("check");
 const settings = document.getElementsByClassName("settings")[0];
 const colorBlocks = document.getElementsByClassName("viscol");
-const colorPicker = document.querySelectorAll("input[type=color]");
+const colorPicker = document.querySelectorAll("input[type=text]");
 const three = document.querySelectorAll(".three");
 const four = document.querySelectorAll(".four");
 const body = document.querySelector("body");

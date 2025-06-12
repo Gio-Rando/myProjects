@@ -1,6 +1,6 @@
 const settings = document.getElementsByClassName("settings")[0];
 const colorBlocks = document.getElementsByClassName("viscol");
-const colorPicker = document.querySelectorAll("input[type=color]");
+const colorPicker = document.querySelectorAll("input[type=text]");
 const form = document.querySelector("form");
 const close = document.querySelector("h2");
 const body = document.querySelector("body");
@@ -9,56 +9,54 @@ const timer = document.querySelector(".timer");
 const content = document.querySelector(".content");
 const image = document.querySelectorAll(".image");
 const guessWord = document.querySelectorAll(".guessWord");
-const img = document.querySelector("img")
-const p = content.children[1]
+const img = document.querySelector("img");
+const p = content.children[1];
 
-let save = JSON.parse(localStorage.getItem("SaveGuess")) || []
+let save = JSON.parse(localStorage.getItem("SaveGuess")) || ["#8F87F1","#C68EFD","#E9A5F1","#FED2E2"];
 
-let next = false
+let next = false;
 // const options = document.querySelector(".options")
 
 const change = () => {
- for (let i = 0; i < image.length ; i++) {
-   setTimeout(() => {
-     timeLine.classList.add("animated");
-     if(i==image.length-1){
-      p.textContent = `${guessWord[i].value}`
-      timeLine.classList.remove("animated");
-     }
+  for (let i = 0; i < image.length; i++) {
     setTimeout(() => {
-      timeLine.classList.remove("animated");
-      p.style.background = `#FED2E2`;
-      p.style.color = `#E9A5F1`;
-      p.style.borderColor = `#E9A5F1`;
-      if (i==image.length-1) {
-        p.textContent = `${guessWord[i].value}`
-      }else{
-        p.textContent = `${save[i+4]}`
+      timeLine.classList.add("animated");
+      if (i == image.length - 1) {
+        p.textContent = `${guessWord[i].value}`;
+        timeLine.classList.remove("animated");
       }
-    }, 5000); 
-    if (next) {
-      timer.style.background = `#E9A5F1`;
-      timeLine.style.background = `linear-gradient(to right,#C68EFD, #8F87F1)`;
-    } else {
-      timer.style.background = `linear-gradient(to right,#C68EFD, #8F87F1)`;
-      timeLine.style.background = `#E9A5F1`;
-    }
-    next =!next
-    img.src = `${`${save[i+7]}`}`
-    if (i==image.length-1) {
-      img.src = `${image[i].value}`
-      p.textContent = `${guessWord[i].value}`
-    }
-    if (i!=image.length-1) {
-      p.textContent = "?"
-      p.style.background = `black`;
-      p.style.color = `white`;
-      p.style.borderColor = `white`;
-    }
-
-  }, i * 8000); 
-}
-  
+      setTimeout(() => {
+        timeLine.classList.remove("animated");
+        p.style.background = `${save[3]}`;
+        p.style.color = `${save[2]}`;
+        p.style.borderColor = `${save[2]}`;
+        if (i == image.length - 1) {
+          p.textContent = `${guessWord[i].value}`;
+        } else {
+          p.textContent = `${save[i + 4]}`;
+        }
+      }, 5000);
+      if (next) {
+        timer.style.background = `${save[2]}`;
+        timeLine.style.background = `linear-gradient(to right,${save[1]},${save[0]})`;
+      } else {
+        timer.style.background = `linear-gradient(to right,${save[1]},${save[0]})`;
+        timeLine.style.background = `${save[2]}`;
+      }
+      next = !next;
+      img.src = `${`${save[i + 7]}`}`;
+      if (i == image.length - 1) {
+        img.src = `${image[i].value}`;
+        p.textContent = `${guessWord[i].value}`;
+      }
+      if (i != image.length - 1) {
+        p.textContent = "?";
+        p.style.background = `black`;
+        p.style.color = `white`;
+        p.style.borderColor = `white`;
+      }
+    }, i * 8000);
+  }
 };
 
 document.addEventListener("keydown", (e) => {
@@ -97,7 +95,18 @@ settings.addEventListener("submit", (e) => {
       colorPicker[i].value = "#050505";
     }
   }
-  save = [settings.one.value , settings.two.value , settings.three.value , settings.four.value, guessWord[0].value , guessWord[1].value , guessWord[2].value , image[0].value,image[1].value,image[2].value]
+  save = [
+    settings.one.value,
+    settings.two.value,
+    settings.three.value,
+    settings.four.value,
+    guessWord[0].value,
+    guessWord[1].value,
+    guessWord[2].value,
+    image[0].value,
+    image[1].value,
+    image[2].value,
+  ];
 
   body.style.background = `linear-gradient(${save[0]},${save[1]})`;
   timer.style.background = `${save[2]}`;
@@ -118,29 +127,31 @@ settings.addEventListener("submit", (e) => {
 
   //}
   localStorage.setItem("SaveGuess", JSON.stringify(save));
-
 });
-  body.style.background = `linear-gradient(${save[0]},${save[1]})`;
-  timer.style.background = `${save[2]}`;
-  timer.children[0].style.color = `${save[3]}`;
-  timer.style.borderColor = `${save[3]}`;
-  timeLine.style.background = `linear-gradient(to right,${save[1]},${save[0]})`;
-  content.style.background = `linear-gradient(${save[1]},${save[0]})`;
-  content.style.borderColor = `${save[3]}`;
-  content.children[0].style.borderColor = `${save[3]}`;
-  p.style.background = `${save[3]}`;
-  p.style.color = `${save[2]}`;
-  p.style.borderColor = `${save[2]}`;
+body.style.background = `linear-gradient(${save[0]},${save[1]})`;
+timer.style.background = `${save[2]}`;
+timer.children[0].style.color = `${save[3]}`;
+timer.style.borderColor = `${save[3]}`;
+timeLine.style.background = `linear-gradient(to right,${save[1]},${save[0]})`;
+content.style.background = `linear-gradient(${save[1]},${save[0]})`;
+content.style.borderColor = `${save[3]}`;
+content.children[0].style.borderColor = `${save[3]}`;
+p.style.background = `${save[3]}`;
+p.style.color = `${save[2]}`;
+p.style.borderColor = `${save[2]}`;
 
-  for (let i = 0; i < colorPicker.length; i++) {
-    colorPicker[i].value = save[i]
-    if (colorPicker[i].value == "rgb(0, 0, 0)") {
-      colorPicker[i].value = "rgb(5, 5, 5)";
-    }
-    colorBlocks[i].style.background = colorPicker[i].value;
-  ;
+for (let i = 0; i < colorPicker.length; i++) {
+  colorPicker[i].value = save[i];
+  if (colorPicker[i].value == "rgb(0, 0, 0)") {
+    colorPicker[i].value = "rgb(5, 5, 5)";
+  }
+  console.log(colorBlocks[i].style.background, colorPicker[i].value);
+  colorBlocks[i].style.background = colorPicker[i].value;
 }
 for (let i = 0; i < image.length - 1; i++) {
-  image[i].value = save[i+7]
-  guessWord[i].value = save[i+4]
+  image[i].value = save[i + 7];
+  guessWord[i].value = save[i + 4];
+}
+for (let i = 0; i < colorBlocks.length; i++) {
+  colorBlocks[i].style.background = `${save[i]}`
 }

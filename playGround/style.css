@@ -1,4 +1,4 @@
-*{
+/* *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -134,4 +134,36 @@ body{
     100%{
         background: radial-gradient(white,black 100%);
     }
+} */
+
+
+.container{
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.one{
+    background-color: red;
+    width:100px ;
+    height: 100px;
+    display: flex;
+    align-items: 8px;
+}
+.two{
+    background-color: yellow;
+    width:200px ;
+    height: 200px;
+}
+.three{
+    background-color: lime;
+    width:300px ;
+    height: 300px;
+}
+.four{
+    background-color: blue;
+    width:400px ;
+    height: 400px;
 }
