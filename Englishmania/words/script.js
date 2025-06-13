@@ -58,7 +58,7 @@ for(let i = 0 ; i < inputs.length ;i++){
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener("click",()=>{
-        inputs[i].style.color = "white"
+        inputs[i].style.color = `${theme[2]}`
         inputs[i].style.backgroundColor = ""
     })    
 }

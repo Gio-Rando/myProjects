@@ -153,7 +153,6 @@ for (let i = 0; i < colorPicker.length; i++) {
   if (colorPicker[i].value == "rgb(0, 0, 0)") {
     colorPicker[i].value = "rgb(5, 5, 5)";
   }
-  console.log(colorBlocks[i].style.background, colorPicker[i].value);
   colorBlocks[i].style.background = colorPicker[i].value;
 }
 for (let i = 0; i < image.length - 1; i++) {
