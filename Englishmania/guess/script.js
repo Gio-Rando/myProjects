@@ -162,4 +162,5 @@ for (let i = 0; i < image.length - 1; i++) {
 }
 for (let i = 0; i < colorBlocks.length; i++) {
   colorBlocks[i].style.background = `${save[i]}`
+  colorPicker[i].value =`${save[i]}`
 }

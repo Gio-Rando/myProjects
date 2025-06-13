@@ -170,4 +170,5 @@ form.save.style.background = `linear-gradient( ${theme[1]},${theme[0]})`;
 form.save.style.color = `${theme[3]}`;
 for (let i = 0; i < colorBlocks.length; i++) {
   colorBlocks[i].style.background = `${theme[i]}`
+  colorPicker[i].value =`${theme[i]}`
 }
