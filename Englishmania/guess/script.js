@@ -13,19 +13,29 @@ const img = document.querySelector("img");
 const p = content.children[1];
 
 let save = JSON.parse(localStorage.getItem("SaveGuess")) || ["#8F87F1","#C68EFD","#E9A5F1","#FED2E2"];
-
+let inTime, outTime,onOff
 let next = false;
 // const options = document.querySelector(".options")
 
 const change = () => {
   for (let i = 0; i < image.length; i++) {
-    setTimeout(() => {
+    outTime = setTimeout(() => {
+      if (onOff) {
+        clearTimeout(inTime)
+        clearTimeout(outTime)
+        return
+      }
       timeLine.classList.add("animated");
       if (i == image.length - 1) {
         p.textContent = `${guessWord[i].value}`;
         timeLine.classList.remove("animated");
       }
-      setTimeout(() => {
+    inTime = setTimeout(() => {
+        if (onOff) {
+        clearTimeout(inTime)
+        clearTimeout(outTime)
+        return
+      }
         timeLine.classList.remove("animated");
         p.style.background = `${save[3]}`;
         p.style.color = `${save[2]}`;
@@ -61,7 +71,19 @@ const change = () => {
 
 document.addEventListener("keydown", (e) => {
   if (e.key == "1") {
+    onOff=false
     change();
+  }
+  else if (e.key == "2"){
+    onOff=true
+    img.src = "https://cdn.discordapp.com/attachments/865743372723421195/1382415849033568529/Screenshot_20250611_214610_FlipaClip.jpg?ex=684b1296&is=6849c116&hm=8721e6e1ad503be7bf410f55967b28b5e66070a45b18ee074902bebb8fc4056c&"
+    timeLine.classList.remove("animated");
+    p.style.background = `${save[3]}`;
+    p.style.color = `${save[2]}`;
+    p.style.borderColor = `${save[2]}`;
+    p.textContent = "Let's Start"
+    timer.style.background = `${save[2]}`;
+    timeLine.style.background = `linear-gradient(to right,${save[1]},${save[0]})`;
   }
 });
 
@@ -148,7 +170,7 @@ p.style.background = `${save[3]}`;
 p.style.color = `${save[2]}`;
 p.style.borderColor = `${save[2]}`;
 
-for (let i = 0; i < colorPicker.length; i++) {
+for (let i = 0; i < colorPicker.length - 8; i++) {
   colorPicker[i].value = save[i];
   if (colorPicker[i].value == "rgb(0, 0, 0)") {
     colorPicker[i].value = "rgb(5, 5, 5)";
