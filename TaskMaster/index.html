@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster</title>
+    <link rel="shortcut icon" href="./tasks-icon-14.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  </head>
+  <body>
+    <i style="position: absolute; font-size: 50px; color: white; top: 20px; right: 20px; cursor: pointer; filter: invert(100%);" class="fa-solid fa-gear"></i>
+    <div class="container">
+        <div class="tasks">
+            <div class="pendingTask draggingTask">
+                <div>
+                    <form class="add">
+                        <input placeholder="Task" name="add" type="text">
+                        <div style="width: 20px;" class="date">
+                            <input style="position: absolute;" name="date" type="date" placeholder="Day">
+                            <i class="img fa-solid fa-stopwatch-20"></i>
+                            <input name="time" type="time">
+                            
+                        </div>
+                        <input name="sub" type="submit">
+                    </form>
+                    <input id="arrow" style="display: none;" type="checkbox">
+                    <label for="arrow"><i class="arrow fa-solid fa-arrow-left"></i></label>
+                </div>
+                <div class="overflow">
+                    <table>
+                        <tr>
+                            <th>Task</th>
+                            <th>Submited</th>
+                            <th>Countdown</th>
+                            <th>Proceed</th>
+                            
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="completedTask draggingTask">
+            <div class="inner overflow draggingTask">
+                    <table>
+                        <tr>
+                            <th>Task</th>
+                            <th>Submited</th>
+                            <th>Completed</th>
+                            <th>Proceed</th>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+    <form class="settings" style="display: none;">
+        <div>
+          <h2>X</h2>
+        </div>
+        <div class="divide">
+            <div class="okey">
+                <div class="color">
+                  <p>Body Background Color:</p>
+                  <div class="colors">
+                    <div class="colorborder">
+                      <input class="colorPicker" type="text" name="one" />
+                      <div class="viscol"></div>
+                    </div>
+                    <div class="colorborder">
+                      <input class="colorPicker"  type="text" name="two" />
+                      <div class="viscol"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="color">
+                  <p>Box Text And Border Colors:</p>
+                  <div class="colors">
+                    <div class="colorborder">
+                      <input class="colorPicker" type="text" name="three" />
+                      <div class="viscol"></div>
+                    </div>
+                    <div class="colorborder">
+                      <input class="colorPicker" type="text" name="four" />
+                      <div class="viscol"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="colorwheels">
+
+            </div>
+      </div>
+  
+      <input type="submit" value="Save" name="settingSave"/>
+
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>

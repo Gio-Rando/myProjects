@@ -1,10 +1,10 @@
-/* *{
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+/* body{
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -134,36 +134,27 @@ body{
     100%{
         background: radial-gradient(white,black 100%);
     }
-} */
+} */ 
 
 
-.container{
-    background-color: black;
+header{
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
     padding: 20px;
-    display: flex;
-    gap: 20px;
-    
 }
-
-.one{
-    background-color: red;
-    width:100px ;
-    height: 100px;
-    display: flex;
-    align-items: 8px;
+header img{
+    width: 100px;
+    border-radius: 100%;
 }
-.two{
-    background-color: yellow;
-    width:200px ;
-    height: 200px;
+nav{
+display: flex;
+gap: 10px;
+gap: 50px;
 }
-.three{
-    background-color: lime;
-    width:300px ;
-    height: 300px;
-}
-.four{
-    background-color: blue;
-    width:400px ;
-    height: 400px;
+nav a{
+    color: lime;
+    text-decoration: none;
+    font-size: 30px;
 }

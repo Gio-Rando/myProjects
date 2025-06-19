@@ -76,7 +76,7 @@ document.addEventListener("keydown", (e) => {
   }
   else if (e.key == "2"){
     onOff=true
-    img.src = "https://cdn.discordapp.com/attachments/865743372723421195/1382415849033568529/Screenshot_20250611_214610_FlipaClip.jpg?ex=684b1296&is=6849c116&hm=8721e6e1ad503be7bf410f55967b28b5e66070a45b18ee074902bebb8fc4056c&"
+    img.src = "./question.jpg"
     timeLine.classList.remove("animated");
     p.style.background = `${save[3]}`;
     p.style.color = `${save[2]}`;
