@@ -239,8 +239,11 @@ print(sorted("12345678"))
 # boolean = True False _ სიმართლე ან სიცრუე
 
 
-print(10%6)
+x = [1,2,5,8,-4,-3,7,6,5]
 
-x = int(input("input: "))
+y = [(x[i],x[i+1]) for i in  range(len(x)-1)]
+print(y[::2])
+for k,i in y[::2]:
+    print(k,i)
 
-print(x//2)
+print(f"N{"O"*100000000}")

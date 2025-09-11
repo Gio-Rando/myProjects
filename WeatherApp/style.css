@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Segoe UI;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url(https://img.goodfon.com/wallpaper/nbig/0/70/nebo-oblaka-tuchi-4871.webp);
+    background-size: cover;
+    
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 200, 255);
+    padding: 20px;
+    color: white;
+    border-radius: 15px;
+    gap: 5px;
+    text-align: center;
+}
+input{
+    border-radius: 7.5px;
+    outline: none;
+    border: none;
+    padding:5px;
+}
+img{
+    width: 206px;
+
+}

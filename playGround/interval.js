@@ -1,71 +1,32 @@
-let keys = {}; // Object to track pressed keys
-let x = 50;
-let y = 300;
-const child = document.getElementById("child"); // Make sure you have an element with this ID
+const block = document.querySelectorAll(".block");
+const text = document.querySelector(".texts");
+const h1 = document.querySelector("h1");
+const line = document.querySelector(".line");
+const lineBackground = document.querySelector(".lineBackground");
 
-document.addEventListener("keydown", (e) => {
-    keys[e.key.toLowerCase()] = true; // Store pressed key
+line.addEventListener("animationstart", () => {
+  const interval = setInterval(() => {
+    h1.textContent = `${Math.ceil(
+      (Number(getComputedStyle(line).width.slice(0, -2)) /
+        Number(getComputedStyle(lineBackground).width.slice(0, -2))) *
+        100
+    )}%`;
+    text.style.transform = `translateY(-${Math.ceil(
+      (Number(getComputedStyle(line).width.slice(0, -2)) /
+        Number(getComputedStyle(lineBackground).width.slice(0, -2))) *
+        100
+    )}px)`
+  }, 20);
+
+  line.addEventListener("animationend", () => {
+    clearInterval(interval);
+    text.style.opacity = "0"
+    h1.style.transform = "translateY(-200px)"
+    line.style.transform = "translateY(200px)"
+    for (let i = 0; i < block.length; i++) {
+      setTimeout(() => {
+        block[i].style.height = "0%";
+      }, i * 70);
+    }
+  });
 });
-
-document.addEventListener("keyup", (e) => {
-    keys[e.key.toLowerCase()] = false; // Remove released key
-    console.log(keys)
-
-});
-
-
-function move() {
-    if (keys["w"] && keys["d"] && (y > 0 && x < 450)) { 
-        y -= 2.5; // Move up
-        x += 2.5; // Move right
-        child.style.top = y + "px"; 
-        child.style.left = x + "px";
-        let audio = new Audio("Gb.mp3")
-        audio.play()
-    }
-    else if (keys["w"] && keys["a"] && (y > 0 && x > 0)) { 
-        y -= 2.5; // Move up
-        x -= 2.5; // Move right
-        child.style.top = y + "px"; 
-        child.style.left = x + "px";
-    }
-    else if (keys["s"] && keys["d"] && (y < 450 && x < 450)) { 
-        y += 2.5; // Move up
-        x += 2.5; // Move right
-        child.style.top = y + "px"; 
-        child.style.left = x + "px";
-    }
-    else if (keys["s"] && keys["a"] && (y < 450 && x > 0)) { 
-        y += 2.5; // Move up
-        x -= 2.5; // Move right
-        child.style.top = y + "px"; 
-        child.style.left = x + "px";
-    }
-
-    requestAnimationFrame(move); // Continuously check movement
-}
-
-move(); // Start movement tracking
-document.addEventListener("keydown", (e) =>{
-
-    if((e.key == "w" || e.key == "W") && y > 0){
-        child.style.top == y
-        y-=5
-    }
-    else if((e.key == "s" || e.key == "S") && y < 450){
-        child.style.top == y
-        y+=5
-    }
-    else if((e.key == "d" || e.key == "D") && x < 450){
-        child.style.left == x
-        x+=5
-    }
-    else if((e.key == "a" || e.key == "A") && x > 0){
-        child.style.left == x
-        x-=5
-    }
-    
-    child.style.left = x + 'px';
-    child.style.top = y + 'px';
-} )
-

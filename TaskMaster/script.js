@@ -471,7 +471,6 @@ form.add.addEventListener("input", () => {
   form.add.style.background = `${settings.four.value}`;
   form.add.style.border = "none";
   form.add.placeholder = "";
-  form.add.value = form.add.value.trim();
 });
 
 const th = document.querySelectorAll("th");

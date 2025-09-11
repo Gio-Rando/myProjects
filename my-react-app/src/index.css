@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+* {
+  font-family: Segoe UI;
+}
+body {
+  background-color: #071420;
+  z-index: -1;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset; 
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #ffffff40;
+}
+
+input:-moz-autofill {
+  box-shadow: 0 0 0px 1000px transparent inset;
+  -moz-text-fill-color: #ffffff;
+  caret-color: #ffffff;
+}
+
+
+@theme {
+  @keyframes typing {
+  0%   { width: 0; }
+  12.5% { width: var(--w1); }
+  25%  { width: var(--w2); }
+  37.5% { width: var(--w3); }
+  50%  { width: var(--w4); }
+  62.5% { width: var(--w5); }
+  75%  { width: var(--w6); }
+  87.5% { width: var(--w7); }
+  100% { width: var(--w8); }
+}
+  @keyframes cursor {
+    0% {
+      border-color: transparent;
+    }
+  }
+  @keyframes loading {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes particle {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(15px);
+        border-color: #ffffff80;
+        background-color: transparent;
+        width: 0px;
+        opacity: 0;
+         
+    }
+  }
+  @keyframes glow {
+    0%{
+      background:#FFFFFF80;
+    }
+    100%{
+      background:#FFFFFFe6;
+    }
+  }
+@keyframes float {
+0%{
+  transform: translateY(2px)
+}
+100%{
+  transform: translateY(-4px)
+
+}
+}
+}
