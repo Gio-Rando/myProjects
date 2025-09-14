@@ -20,7 +20,7 @@ function AboutMe() {
             </h1>
           </div>
           <div className="xl:w-[840px] md:w-[600px] sm:w-[425px] w-full  relative h-[180px]">
-            <p className="xl:text-lg border-[10px] text-lg sm:text-[16px] border-b-[#00ff80] border-l-0 border-r-0 p-[20px] px-[40px] absolute right-0 sm:right-[-40px]">
+            <p className="xl:text-lg border-[10px] text-lg sm:text-[16px] border-b-[#00ff80] border-l-0 border-r-0 p-[20px] px-[40px] absolute right-0 font-medium sm:right-[-40px]">
               I’m a front-end developer who really cares about what I build. I
               like to keep things clean, simple, and easy to use. I take my work
               seriously and try to do my best every time. I enjoy working with
