@@ -73,7 +73,7 @@ function Contact() {
 
   return (
     <div className="flex sm:flex-row flex-col xl:ml-30 justify-center lg:scale-100 sm:scale-80  items-center duration-300 h-[90vh] lg:mt-20 ">
-      <div className={`xl:gap-50 gap-15 -translate-y-10 sm:-translate-y-0 w-[716px] sm:flex-row flex-col sm:scale-100 translate-x-0 scale-50  ${choose ? " sm:translate-x-10" : "sm:-translate-x-10"} xl:w-max duration-300 relative flex items-center`}>
+      <div className={`xl:gap-50 gap-15 -translate-y-15 sm:-translate-y-0 w-[716px] sm:flex-row flex-col sm:scale-100 translate-x-0 scale-50  ${choose ? " sm:translate-x-10" : "sm:-translate-x-10"} xl:w-max duration-300 relative flex items-center`}>
 
         <div className={`sm:absolute sm:rotate-0 rotate-90 xl:static left-0 xl:opacity-100 xl:z-0  ${!choose ? "sm:opacity-0 sm:-z-1" : "sm:opacity-100"}xl:static xl:z-0 duration-300`}>
           <div className="flex relative h-max mb-10">

@@ -60,7 +60,7 @@ function Loading() {
         ref={textRef}
       >
         <h1
-          className="font-bold text-[200px] z-40 text-white duration-400"
+          className="font-bold text-[125px] sm:text-[200px] z-40 text-white duration-400"
           ref={h1Ref}
         >
           0%
