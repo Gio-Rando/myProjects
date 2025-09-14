@@ -5,7 +5,7 @@ import skillwill from "./assets/skillwill.png";
 import skillogo from "./assets/skill.png";
 import soloLearn from "./assets/soloHTML.jpg";
 import soloLearnCSS from "./assets/soloCSS.jpg";
-import soloLearnJS from "./assets/soloJS.jpg";
+import soloLearnJS from "./assets/SoloJS.jpg";
 import soloLearnJS2 from "./assets/soloJS2.jpg";
 import sologo from "./assets/solo.png";
 import matrix from "./assets/matrix.png";
