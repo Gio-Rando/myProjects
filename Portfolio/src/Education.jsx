@@ -43,7 +43,7 @@ function Certificate(i) {
     case 2:  case 3:
       return (
         <div
-          className={`xl:rounded-l-lg w-full h-full flex flex-col justify-center items-center transform rotate-y-180 border-8 border-[cyan]`}
+          className={`xl:rounded-l-lg -translate-y-15g  sm:-translate-y-0 w-full h-full flex flex-col justify-center items-center transform rotate-y-180 border-8 border-[cyan]`}
         >
           <img
             className="w-1/2  self-start h-1/2 xl:rotate-0 rotate-180 "
