@@ -323,7 +323,7 @@ gen.addEventListener("click", async () => {
         
     } catch (error) {
         console.error("Error contacting server:", error);
-        ai.textContent = "⚠️ Error generating response.(You might be out of credits)";
+        ai.textContent = "⚠️ Error generating response.(You are out of credits or AI is not on)";
     }
     gen.value = "Submit"
     p.style.display = "none"
