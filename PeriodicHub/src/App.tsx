@@ -78,7 +78,7 @@ function App() {
                     {dataEl.atomicMass}
                   </h6>
                 </div>
-                <div className="sm:w-2 w-[300px] sm:h-[520px] h-2 bg-[#8000FF] rounded-2xl"></div>
+                <div className="sm:w-2 w-[300px] sm:h-[520px] h-2 invert-100 rounded-2xl" style={{ backgroundColor: `#${dataEl.cpkHexColor}` }}></div>
                 <table>
                   {Object.entries(dataEl).map(([key, value], i) => {
                     if (
