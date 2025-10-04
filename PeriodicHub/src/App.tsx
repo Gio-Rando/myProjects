@@ -46,7 +46,7 @@ function App() {
       >
         <input
           className="bg-[#0B1E2E] text-white rounded-xl p-1"
-          placeholder="O, Oxygen or 8"
+          placeholder="O, Oxygen, ჟანგბადი or 8"
           name="search"
           type="text"
           onInput={OnInput}
