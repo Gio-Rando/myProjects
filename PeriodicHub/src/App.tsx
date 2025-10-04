@@ -45,7 +45,7 @@ function App() {
         }}
       >
         <input
-          className="bg-[#0B1E2E] text-white rounded-xl p-1"
+          className="bg-[#0B1E2E] text-white rounded-xl p-1 outline-0 border-0 focus:scale-110 duration-300"
           placeholder="O, Oxygen, ჟანგბადი or 8"
           name="search"
           type="text"
